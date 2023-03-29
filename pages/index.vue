@@ -1,8 +1,8 @@
 <template>
   <section class="container">
     <!-- input area start  -->
-    <div class="container mt-4">
-      <div class="form-outline flex items-center justify-center">
+    <div class="container  mt-3 py-2 rounded-[10px] bg-[#e1f5fe]">
+      <div class="form-outline flex items-center  justify-center">
         <input
           type="search"
           id="form1"
@@ -21,7 +21,7 @@
     <div class="container flex items-center justify-center gap-4 py-2">
       <div class="flex items-center justify-center flex-wrap ml-12 w-full">
         <!-- main cart area start  -->
-        <div class="mt-4 min-w-[350px]">
+        <div class="mt-3 min-w-[350px]">
           <div v-if="data.name" class="" v-show="data.length != 0">
             <div class="card" style="color: #4b515d; border-radius: 35px">
               <div class="card-body p-4">
@@ -32,8 +32,7 @@
 
                 <div class="d-flex flex-column text-center mt-5">
                   <h6
-                    class="display-6 mb-0 font-weight-bold"
-                    style="color: #1c2331"
+                    class="text-6xl mb-0 text-[#1c2331] font-bold"
                   >
                     {{ Math.round(data.main.temp) }} ℃
                   </h6>
@@ -42,7 +41,7 @@
                     <!-- rain -->
                   </span>
                   <span class="small" style="color: #868b94"
-                    >{{ data.weather[0].description }}
+                    >{{ data.weather[0].description.split(" ").map(item=>item[0].toUpperCase()+item.slice(1)).join(" ") }}
                   </span>
 
                   <div class="w-full flex justify-center">
@@ -149,7 +148,7 @@
           >
             <div class="row d-flex mt-4">
               <div v-if="data.name" v-show="data.length != 0">
-                <div class="card  bg-blue-400" style="color: #4b515d; border-radius: 35px">
+                <div class="card  bg-blue-200" style="color: #4b515d; border-radius: 35px">
                   <div class="card-body p-4">
                     <div class="d-flex">
                       <h6 class="flex-grow-1">
@@ -163,7 +162,7 @@
                     </div>
 
                     <div class="d-flex flex-column text-center">
-                      <h6 class="mb-0 text-[1.5rem] font-bold text-red-500">
+                      <h6 class="mb-0 text-[1.5rem] font-bold text-slate-700">
                         {{ Math.round(forecasteData[i].main.temp) }} ℃
                       </h6>
 
@@ -351,6 +350,10 @@ export default {
         {
           url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/overcast-rain.svg",
           alt: "Rain",
+        },
+        {
+          url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/overcast-snow.svg",
+          alt: "Snow",
         },
         {
           url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/overcast-snow.svg",
