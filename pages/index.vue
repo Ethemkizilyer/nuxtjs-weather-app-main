@@ -356,8 +356,8 @@ export default {
           alt: "Snow",
         },
         {
-          url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/overcast-snow.svg",
-          alt: "Snow",
+          url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/overcast-sunny.svg",
+          alt: "Sunny",
         },
       ],
     };
