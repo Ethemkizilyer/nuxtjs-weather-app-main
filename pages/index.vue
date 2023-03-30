@@ -23,7 +23,7 @@
         <!-- main cart area start  -->
         <div class="mt-3 min-w-[350px]">
           <div v-if="data.name" class="" v-show="data.length != 0">
-            <div class="card" style="color: #4b515d; border-radius: 35px">
+            <div class="card bg-orange-200" style="color: #4b515d; border-radius: 35px">
               <div class="card-body p-4">
                 <div class="d-flex">
                   <h6 class="flex-grow-1">{{ data.name }}</h6>
@@ -316,14 +316,10 @@ import Vue from "vue";
 import Toastify from "vue-toastify";
 
 Vue.use(Toastify);
-
 const searchCity = `https://api.openweathermap.org/data/2.5/weather?q={sear}&units=metric&appid=9bad0bd4b134dd63910604be2575cdc7`;
-const searchCityDays = `https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=9bad0bd4b134dd63910604be2575cdc7`;
+const searchCityDays = `https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=9bad0bd4b134dd63910604be2575cdc7&cnt=60`;
 
-const toDegree = -272.15;
-console.log(typeof date);
 
-// console.log(APIURL);
 
 export default {
   components: {
