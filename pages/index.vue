@@ -369,7 +369,7 @@ export default {
     getSearch() {
       if (this.search) {
         axios
-          .get(`https://api.openweathermap.org/data/2.5/weather?q={sear}&units=metric&appid=${process.env.apiKey}`.replace("{sear}", this.search))
+          .get(`https://api.openweathermap.org/data/2.5/weather?q={sear}&units=metric&appid=${process.env.API_KEY}`.replace("{sear}", this.search))
           .then((res) => {
             console.log(res.data);
             this.data = res.data;
@@ -378,7 +378,7 @@ export default {
             this.data = "";
           });
         axios
-          .get(`https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=${process.env.apiKey}&cnt=40`.replace("{sear}", this.search))
+          .get(`https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=${process.env.API_KEY}&cnt=40`.replace("{sear}", this.search))
           .then((res) => {
             const watherList = {};
             res.data.list.forEach((day) => {
@@ -399,11 +399,11 @@ export default {
       }
     },
     getPosition() {
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?q={sear}&units=metric&appid=${process.env.apiKey}`.replace("{sear}", "Ankara")).then((res) => {
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?q={sear}&units=metric&appid=${process.env.API_KEY}`.replace("{sear}", "Ankara")).then((res) => {
         console.log(res.data);
         this.data = res.data;
       });
-      axios.get(`https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=${process.env.apiKey}&cnt=40`.replace("{sear}", "Ankara")).then((res) => {
+      axios.get(`https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=${process.env.API_KEY}&cnt=40`.replace("{sear}", "Ankara")).then((res) => {
         console.log(res.data);
         const watherList = {};
         res.data.list.forEach((day) => {
