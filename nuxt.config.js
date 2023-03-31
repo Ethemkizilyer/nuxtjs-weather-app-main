@@ -46,9 +46,9 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
-  privateRuntimeConfig: {
-    API_KEY: process.env.API_KEY
-  },
+  // privateRuntimeConfig: {
+  //   API_KEY: process.env.API_KEY
+  // },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   buildModules: ["@nuxtjs/dotenv"],
   build: {
