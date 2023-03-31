@@ -328,6 +328,7 @@ export default {
       data: {},
       search: "",
       forecasteData: [],
+       apiKey: process.env.apiKey,
       images: [
         {
           url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/cloudy.svg",
