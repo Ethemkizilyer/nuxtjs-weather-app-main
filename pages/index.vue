@@ -313,8 +313,8 @@ import { Carousel, Slide } from "../node_modules/vue-carousel";
 import Vue from "vue";
 import Toastify from "vue-toastify";
 Vue.use(Toastify);
-const searchCity = `https://api.openweathermap.org/data/2.5/weather?q={sear}&units=metric&appid=${process.env.API_KEY}`;
-const searchCityDays = `https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=${process.env.API_KEY}&cnt=40`;
+const searchCity = `https://api.openweathermap.org/data/2.5/weather?q={sear}&units=metric&appid=${process.env.apiKey}`;
+const searchCityDays = `https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=${process.env.apiKey}&cnt=40`;
 export default {
   components: {
     Carousel,
