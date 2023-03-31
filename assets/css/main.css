@@ -3,8 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 body {
   background: #efefef;
   background-image: url("../weather.jpg");
@@ -19,11 +17,8 @@ body {
 }
 
 .preloader {
-
-
-	height: 110px;
-	width: 110px;
-
+  height: 110px;
+  width: 110px;
 }
 
 svg {
@@ -34,7 +29,7 @@ svg {
 path {
   stroke: #9ea1a4;
   stroke-width: 0.25;
-  fill: #241E20;
+  fill: #241e20;
 }
 
 #cloud {
@@ -56,7 +51,7 @@ path {
   left: 45px;
   top: 15px;
   z-index: 1;
-  
+
   animation-name: rotate;
   animation-duration: 16000ms;
   animation-iteration-count: infinite;
@@ -67,7 +62,6 @@ path {
   stroke-width: 0.18;
   fill: #9ea1a4;
 }
-
 
 @keyframes rotate {
   0% {
@@ -97,7 +91,7 @@ path {
   height: 10px;
   margin-left: 4px;
   border-radius: 0px 0px 6px 6px;
-  
+
   animation-name: drop;
   animation-duration: 350ms;
   animation-iteration-count: infinite;
@@ -143,7 +137,6 @@ path {
   animation-delay: -1300ms;
 }
 
-
 @keyframes drop {
   50% {
     height: 45px;
@@ -161,20 +154,16 @@ path {
 }
 
 .text {
-	font-family: Helvetica, 'Helvetica Neue', sans-serif;
-	letter-spacing: 1px;
-	text-align: center;
-	margin-left: -43px;
-	font-weight: bold;
-	margin-top: 20px;
-	font-size: 11px;
-	color: #a0a0a0;
-	width: 200px;
+  font-family: Helvetica, "Helvetica Neue", sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-left: -43px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 11px;
+  color: #a0a0a0;
+  width: 200px;
 }
-
-
-
-
 
 .VueCarousel-inner {
   visibility: visible !important;
@@ -184,7 +173,7 @@ path {
   display: none !important;
   flex-shrink: 1 !important;
 }
-.VueCarousel-slide-active, 
+.VueCarousel-slide-active,
 .VueCarousel-slide.VueCarousel-slide-active {
   display: flex !important;
 }

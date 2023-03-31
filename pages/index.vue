@@ -58,7 +58,6 @@
                   <!-- render icns start -->
                 </div>
                 <!-- render icns end -->
-
                 <div
                   class="grid grid-flow-col relative"
                   style="font-size: 1rem"
@@ -178,7 +177,6 @@
                         />
                       </div>
                     </div>
-
                     <div
                       class="d-flex justify-content-between align-items-center"
                       style="font-size: 1rem"
@@ -314,13 +312,9 @@ import axios from "axios";
 import { Carousel, Slide } from "../node_modules/vue-carousel";
 import Vue from "vue";
 import Toastify from "vue-toastify";
-
 Vue.use(Toastify);
-const searchCity = `https://api.openweathermap.org/data/2.5/weather?q={sear}&units=metric&appid=9bad0bd4b134dd63910604be2575cdc7`;
-const searchCityDays = `https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=9bad0bd4b134dd63910604be2575cdc7&cnt=60`;
-
-
-
+const searchCity = `https://api.openweathermap.org/data/2.5/weather?q={sear}&units=metric&appid=${process.env.API_KEY}`;
+const searchCityDays = `https://api.openweathermap.org/data/2.5/forecast?q={sear}&units=metric&appid=${process.env.API_KEY}&cnt=40`;
 export default {
   components: {
     Carousel,
@@ -355,10 +349,13 @@ export default {
           url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/overcast-sunny.svg",
           alt: "Sunny",
         },
+        {
+          url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/overcast-drizzle.svg",
+          alt: "Drizzle",
+        },
       ],
     };
   },
-
   methods: {
     getCurrentLocation() {
       console.log(navigator);
@@ -386,12 +383,10 @@ export default {
             const watherList = {};
             res.data.list.forEach((day) => {
               const [date] = day.dt_txt.split(" ");
-
               if (!watherList[date]) {
                 watherList[date] = day;
               }
             });
-
             this.forecasteData = Object.values(watherList);
             console.log(watherList);
           })
@@ -403,25 +398,20 @@ export default {
         this.$toast("Enter city name!");
       }
     },
-
     getPosition() {
       axios.get(searchCity.replace("{sear}", "Ankara")).then((res) => {
         console.log(res.data);
         this.data = res.data;
       });
-
       axios.get(searchCityDays.replace("{sear}", "Ankara")).then((res) => {
         console.log(res.data);
-
         const watherList = {};
         res.data.list.forEach((day) => {
           const [date] = day.dt_txt.split(" ");
-
           if (!watherList[date]) {
             watherList[date] = day;
           }
         });
-
         this.forecasteData = Object.values(watherList);
         console.log(watherList);
       });
@@ -429,7 +419,6 @@ export default {
     setData(data) {
       this.data = data;
     },
-
     currentDate() {
       const current = new Date();
       console.log(current);
